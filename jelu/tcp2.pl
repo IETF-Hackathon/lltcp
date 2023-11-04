@@ -8,8 +8,8 @@ while(<>) {
         ($c, $f, $s) = ($1, $3, $4);
         if ($f =~ /F/go) {
             if ($c{$c} > 1) {
-                print("$c{$c} $c\n");
-                print($l{$c});
+                print("$c{$c} $c (F)\n");
+                print("  ",$l{$c});
             }
             delete $c{$c};
             delete $l{$c};
@@ -30,7 +30,7 @@ while(<>) {
 foreach $c (keys %c) {
     if ($c{$c} > 1) {
         print("$c{$c} $c\n");
-        print($l{$c});
+        print("  ",$l{$c});
     }
 }
         
